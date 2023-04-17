@@ -1,12 +1,13 @@
 package ru.koryakin.service;
 
-import ru.koryakin.exception.NotFoundException;
+import org.springframework.stereotype.Service;
 import ru.koryakin.model.Post;
 import ru.koryakin.repository.PostRepository;
 
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Service
 public class PostService {
   private final PostRepository repository;
 

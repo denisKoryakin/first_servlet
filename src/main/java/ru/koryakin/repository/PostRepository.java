@@ -1,12 +1,13 @@
 package ru.koryakin.repository;
 
+import org.springframework.stereotype.Repository;
 import ru.koryakin.model.Post;
 
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
-// Stub
+@Repository
 public class PostRepository {
 
     private static AtomicLong counter = new AtomicLong(1);
