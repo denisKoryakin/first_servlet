@@ -1,5 +1,7 @@
 package ru.koryakin.servlet;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import ru.koryakin.config.JavaConfig;
 import ru.koryakin.controller.PostController;
 import ru.koryakin.repository.PostRepository;
 import ru.koryakin.service.PostService;
@@ -13,9 +15,8 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void init() {
-        final var repository = new PostRepository();
-        final var service = new PostService(repository);
-        controller = new PostController(service);
+        final var context = new AnnotationConfigApplicationContext(JavaConfig.class);
+        controller = context.getBean(PostController.class);
     }
 
     @Override
